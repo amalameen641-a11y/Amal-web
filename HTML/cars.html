@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>السيارات - متجر مرسيدس</title>
+    <link rel="stylesheet" href="../CSS/style.css">
+</head>
+<body>
+    <header>
+        <h1>Mercedes-Benz Store</h1>
+        <nav>
+            <a href="home.html">الرئيسية</a>
+            <a href="cars.html">السيارات</a>
+            <a href="about.html">من نحن</a>
+            <a href="contact.html">اتصل بنا</a>
+            <a href="offers.html">العروض</a>
+            <a href="Reservation.html">الحجز</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="cars-list">
+            <h2>سياراتنا الفاخرة</h2>
+
+            <div class="row top-row">
+                <div class="car">
+                    <img src="img/Mercedes X-Class.jpg" alt="Mercedes X-Class">
+                    <h3>Mercedes X-Class</h3>
+                    <p>توفر بمحرك V6 ديزل سعة 3.0 لتر تيربو يولد قوة 258 حصان وعزم 550 نيوتن.متر، مع ناقل حركة أوتوماتيكي 7 سرعات ونظام دفع رباعي 4MATIC.مقصورة فخمة بلمسات خشب وجلد فاخر، شاشة ترفيه وسطية مع نظام ملاحة، تكييف أوتوماتيكي ثنائي، ونظام صوتي متطور.قدرة سحب قوية وحمولة عالية، مع ثبات ممتاز على الطرق الوعرة والمعبدة.</p>
+                </div>
+                <div class="car">
+                    <img src="img/Mercedes-Benz S560 Cabriolet.jpg" alt="Mercedes-Benz S560 Cabriolet">
+                    <h3>Mercedes-Benz S560 Cabriolet </h3>
+                    <p>حرك V8 سعة 4.0 لتر ثنائي التيربو، يولد 463 حصان وعزم 700 نيوتن.متر، يتسارع من 0 لـ 100 كم/س في 4.6 ثانية.سقف مكشوف كهربائي، مقاعد جلدية فاخرة مع تبريد وتدفئة، أنظمة مساعدة ذكية للقيادة، ونظام صوتي Burmester عالي الجودة.ناقل حركة أوتوماتيكي 9 سرعات 9G-Tronic، مع تجربة قيادة رياضية وسلسة في نفس الوقت.</p>
+                </div>
+                <div class="car">
+                    <img src="img/Mercedes-Benz AMG GT Black Series.jpg" alt="Mercedes-Benz AMG GT Black Series">
+                    <h3>Mercedes-Benz AMG GT Black Series</h3>
+                    <p>محرك V8 Biturbo سعة 4.0 لتر.القوة الحصانية 720 حصاناً.عزم الدوران: 800 نيوتن متر. مصممة لتقديم أداء رياضي عالٍ على الحلبات والطرق. تتميز بتصميم عدواني وديناميكي هوائي محسن، بما في ذلك الجناح الخلفي الكبير والمكونات الهوائية الأخرى لزيادة القوة الضاغطة. </p>
+                </div>
+            </div>
+
+            <div class="row bottom-row">
+                <div class="car">
+                    <img src="img/Mercedes-Maybach S-Class S 680.jpg" alt="Mercedes-Maybach S-Class S 680">
+                    <h3>Mercedes-Maybach S-Class S 680</h3>
+                    <p>S 680: تتميز بمحرك V12 بسعة 6.0 لتر ثنائي التيربو يولد قوة 612 حصان وعزم دوران 900 نيوتن متر. تميز بتصميم أنيق وفاخر مع شبك أمامي مميز وشعار مايباخ. قصورة داخلية فائقة الفخامة باستخدام أجود الخامات والحرفية العالية. نظام معلوماتي ترفيهي ذكي MBUX مع شاشات متعددة لتعزيز تجربة الركاب.إضاءة داخلية محيطة قابلة للتخصيص. تقنيات مبتكرة ومساعدة للسائق لتعزيز الأمان والراحة.</p>
+                </div>
+                <div class="car">
+                    <img src="img/Mercedes G-Class.jpg" alt="Mercedes G-Class">
+                    <h3>Mercedes G-Class</h3>
+                    <p>تصميم خارجي قوي وفخم مع جنوط رياضية كبيرة ولمسات كربون. داخلية جلد فاخر باللون الأبيض مع تطريز ماسي ونظام راحة عالي. مزوّدة بمحرك V8 ثنائي التوربو بأردتعـال 4.0 لتر مع مساعدة هجين، ينتج حوالي 577 حصان و627 رطل-قدم عزم عند 2,500–3,500 دورة بالدقيقة، تسرع من 0 إلى 60 ميل/ساعة في حوالي 4.2 ثانية.خيّارة فخمة وقوية، تجمع بين الرفاهية الخارقة وأداء قوي على الطرقات والوحل.</p>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- نافذة تكبير الصور -->
+    <div class="popup" id="popup">
+        <span id="closeBtn">&times;</span>
+        <img id="popupImg" src="" alt="">
+    </div>
+
+    <script>
+        // عناصر popup
+        const popup = document.getElementById("popup");
+        const popupImg = document.getElementById("popupImg");
+        const closeBtn = document.getElementById("closeBtn");
+
+        // عند الضغط على صورة سيارة
+        document.querySelectorAll(".car img").forEach(img => {
+            img.addEventListener("click", () => {
+                popup.style.display = "flex";
+                popupImg.src = img.src;
+                popupImg.alt = img.alt;
+            });
+        });
+
+        // إغلاق عند الضغط على ×
+        closeBtn.addEventListener("click", () => {
+            popup.style.display = "none";
+        });
+
+        // إغلاق عند الضغط خارج الصورة
+        popup.addEventListener("click", (e) => {
+            if (e.target === popup) {
+                popup.style.display = "none";
+            }
+        });
+    </script>
+</body>
+</html>

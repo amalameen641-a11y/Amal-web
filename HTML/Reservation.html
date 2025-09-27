@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الحجز - متجر مرسيدس</title>
+    <link rel="stylesheet" href="../CSS/style.css">
+</head>
+<body>
+    <header>
+        <h1>Mercedes-Benz Store</h1>
+        <nav>
+            <a href="home.html">الرئيسية</a>
+            <a href="cars.html">السيارات</a>
+            <a href="about.html">من نحن</a>
+            <a href="contact.html">اتصل بنا</a>
+            <a href="offers.html">العروض</a>
+            <a href="Reservation.html">الحجز</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="cars-list">
+
+             <div class="car">
+                <img src="img/Mercedes G-Class.jpg" alt="Mercedes G-Class">
+                <h3>Mercedes G-Class</h3>  
+                
+                <button onclick="requestCar('Mercedes G-Class')">احجز السيارة لتجربة الأداء</button>
+            </div>
+
+            <div class="car">
+                <img src="img/Mercedes-Benz S560 Cabriolet.jpg" alt="Mercedes-Benz S560 Cabriolet">
+                <h3>Mercedes-Benz S560 Cabriolet</h3>
+              
+                <button onclick="requestCar('Mercedes-Benz S560 Cabriolet')">احجز السيارة لتجربة الأداء</button>
+            </div>
+            
+            <div class="car">
+                <img src="img/Mercedes X-Class.jpg" alt="Mercedes X-Class">
+                <h3>Mercedes X-Class</h3>
+
+                <button onclick="requestCar('MerMercedes X-Class')">احجز السيارة لتجربة الأداء</button>
+            </div>
+            
+            <div class="car">
+                <img src="img/Mercedes-Benz AMG GT Black Series.jpg" alt="Mercedes-Benz AMG GT Black Series">
+                <h3>Mercedes-Benz AMG GT Black Series</h3>
+
+                <button onclick="requestCar('Mercedes-Benz AMG GT Black Series')">احجز السيارة لتجربة الأداء</button>                
+            </div>
+
+            <div class="car">
+                <img src="img/Mercedes-Maybach S-Class S 680.jpg" alt="Mercedes-Maybach S-Class S 680">
+                <h3>Mercedes-Maybach S-Class S 680</h3>
+               
+                <button onclick="requestCar('Mercedes-Maybach S-Class S 680')">احجز السيارة لتجربة الأداء</button>
+            </div>
+        </section>
+
+            
+
+        <!-- نموذج الطلب -->
+        <div id="requestForm" class="request-form">
+            <h3>طلب حجز السيارة</h3>
+            <label>الاسم:</label>
+            <input type="text" id="name" placeholder="أدخل اسمك"><br>
+
+            <label>رقم الهاتف:</label>
+            <input type="text" id="phone" placeholder="أدخل رقمك"><br>
+
+            <label>السيارة المختارة:</label>
+            <input type="text" id="carName" readonly><br>
+
+            <button onclick="confirmRequest()">إرسال الطلب</button>
+        </div>
+
+        <!-- رسالة التأكيد -->
+        <div id="confirmation" class="confirmation">
+            ✅ تم إرسال طلبك، سنتواصل معك قريباً
+        </div>
+    </main>
+
+   <script>
+    function requestCar(car) {
+        document.getElementById("carName").value = car;
+        document.getElementById("requestForm").style.display = "block";
+        document.getElementById("confirmation").style.display = "none";
+    }
+
+    function confirmRequest() {
+        let name = document.getElementById("name").value.trim();
+        let phone = document.getElementById("phone").value.trim();
+
+        if (name === "" || phone === "") {
+            alert("⚠️ يرجى إدخال الاسم ورقم الهاتف قبل إرسال الطلب");
+            return; // يوقف العملية
+        }
+
+        document.getElementById("requestForm").style.display = "none";
+        document.getElementById("confirmation").style.display = "block";
+    }
+</script>
+
+</body>
+</html>
+
